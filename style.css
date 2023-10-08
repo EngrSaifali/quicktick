@@ -1,0 +1,319 @@
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    background-color: #7a26aa;
+    margin: 0;
+    padding: 0;
+}
+
+#stopwatch {
+    width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#stopwatch .button {
+    background-color: #3498db; /* A neutral blue color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 18px;
+}
+
+#stopwatch .button:hover {
+    background-color: #2980b9; /* Slightly darker blue color on hover */
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 4.5em;
+    color: #0b89de;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    animation: bounce 1.5s ease infinite;
+    margin-top: 40px;
+}
+  
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+}
+  
+h1::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #3498db, #e74c3c, #9b59b6);
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+  
+h1:hover::before {
+    opacity: 1;
+}
+  
+h1::after {
+    content: '🕗';
+    display: inline-block;
+    font-size: 1.5em;
+    color: #e74c3c;
+    margin-left: 10px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      transform: rotate(360deg);
+    }
+}
+  
+#timer {
+    font-size: 50px;
+    text-align: center;
+    color: #ff0000;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+ 
+#controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+  
+#laps {
+    margin-top: 40px;
+}
+  
+#lap-list {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.lap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+  
+.lap-time {
+    font-size: 20px;
+    color: #333;
+}
+  
+.lap-number {
+    font-size: 16px;
+    color: gray;
+}
+  
+#timer {
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Blue gradient background */
+    color: #fff;
+    font-size: 48px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    animation: rotate 2s linear infinite;
+}
+
+/* Define a rotating animation for an engaging effect */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style the inner circle to add depth and dimension */
+#timer::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: -1;
+}
+
+#controls button {
+    width: 100px;
+    height: 50px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+}
+
+#controls button:hover {
+    background-color: #e2574c;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#controls button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #ff6f61, #e2574c);
+    border-radius: 10px;
+    opacity: 0.5;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+#controls button:hover::before {
+    transform: translateX(100%);
+}
+
+.lap {
+    border-bottom: 1px solid #ccc;
+}
+  
+.lap:last-child {
+    border-bottom: none;
+}
+
+  /* CSS animations */
+  
+#timer {
+    animation: pulse-animation 1s infinite;
+}
+    @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+}
+
+h2 {
+    color: #3498db; /* Coral text color */
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #326ddb; /* Green line color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+h2::before {
+    content: "🕒"; /* Clock emoji */
+    font-size: 24px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+h2:hover {
+    color: #ff6b6b; /* Blue text color on hover */
+    transform: translateY(-5px);
+}
+
+h2:hover::after {
+    transform: scaleX(1);
+}
+
+h2:hover::before {
+    opacity: 1;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    #stopwatch {
+        width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    #timer {
+        font-size: 36px;
+    }
+
+    #controls {
+        flex-direction: column;
+    }
+
+    #controls button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Responsive styles for even smaller screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    #timer {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+}
+
+/* Add more media queries as needed for different screen sizes */
+
+/* Rest of your existing CSS code... */
